@@ -46,13 +46,13 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		mBestLocationListener.register(mLocationManager, true);
+		mBestLocationListener.unregister(mLocationManager);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		mBestLocationListener.unregister(mLocationManager);
+		mBestLocationListener.register(mLocationManager, true);
 	}
 
 	@Override
